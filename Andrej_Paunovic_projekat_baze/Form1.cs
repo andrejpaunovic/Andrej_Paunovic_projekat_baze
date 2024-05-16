@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Xml.Schema;
 
 namespace Andrej_Paunovic_projekat_baze
 {
     public partial class loginforma : Form
     {
+        public static string ime, broj;
         public loginforma()
         {
             InitializeComponent();
@@ -73,6 +75,10 @@ namespace Andrej_Paunovic_projekat_baze
             {
                 label2.Visible = true;
             }
+        }
+        public String vrati()
+        {
+            return ime;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -143,6 +149,12 @@ namespace Andrej_Paunovic_projekat_baze
                 }
                 if (prosao == 0)
                 {
+                    StringBuilder novo = new StringBuilder("Select MAX(id) from Osoba");
+                    SqlConnection sqlConnection = MojaKonekcija.Connect();
+                    SqlDataAdapter adapter = new SqlDataAdapter(novo.ToString(), veza);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    ime = dt.Rows[0][0].ToString();
                     Aplikacija aplikacija = new Aplikacija();
                     aplikacija.Show();
                 }

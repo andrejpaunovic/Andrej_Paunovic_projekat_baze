@@ -37,7 +37,9 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_proveri = new System.Windows.Forms.Button();
             this.btn_zakazi = new System.Windows.Forms.Button();
+            this.dataGridspec = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grid_termini)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridspec)).BeginInit();
             this.SuspendLayout();
             // 
             // cmb_Studio
@@ -59,11 +61,11 @@
             // grid_termini
             // 
             this.grid_termini.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid_termini.Location = new System.Drawing.Point(32, 274);
+            this.grid_termini.Location = new System.Drawing.Point(32, 368);
             this.grid_termini.Name = "grid_termini";
             this.grid_termini.RowHeadersWidth = 51;
             this.grid_termini.RowTemplate.Height = 24;
-            this.grid_termini.Size = new System.Drawing.Size(1115, 244);
+            this.grid_termini.Size = new System.Drawing.Size(1408, 244);
             this.grid_termini.TabIndex = 2;
             // 
             // cmb_od
@@ -108,12 +110,24 @@
             this.btn_zakazi.TabIndex = 7;
             this.btn_zakazi.Text = "Zakazi";
             this.btn_zakazi.UseVisualStyleBackColor = true;
+            this.btn_zakazi.Click += new System.EventHandler(this.btn_zakazi_Click);
+            // 
+            // dataGridspec
+            // 
+            this.dataGridspec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridspec.Location = new System.Drawing.Point(32, 272);
+            this.dataGridspec.Name = "dataGridspec";
+            this.dataGridspec.RowHeadersWidth = 51;
+            this.dataGridspec.RowTemplate.Height = 24;
+            this.dataGridspec.Size = new System.Drawing.Size(1408, 76);
+            this.dataGridspec.TabIndex = 8;
             // 
             // Aplikacija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1203, 540);
+            this.ClientSize = new System.Drawing.Size(1461, 636);
+            this.Controls.Add(this.dataGridspec);
             this.Controls.Add(this.btn_zakazi);
             this.Controls.Add(this.btn_proveri);
             this.Controls.Add(this.textBox1);
@@ -127,6 +141,7 @@
             this.Text = "Belgrade Studios";
             this.Load += new System.EventHandler(this.Aplikacija_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_termini)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridspec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +157,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_proveri;
         private System.Windows.Forms.Button btn_zakazi;
+        private System.Windows.Forms.DataGridView dataGridspec;
     }
 }
